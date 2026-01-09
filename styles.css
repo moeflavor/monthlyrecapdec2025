@@ -247,6 +247,32 @@ footer {
     box-shadow: 0 6px 25px rgba(255, 20, 147, 0.5);
 }
 
+.section-header.purple-header {
+    background: linear-gradient(135deg, #b794f6, #9f7aea, #805ad5);
+    animation: popInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.section-header.purple-header:hover {
+    box-shadow: 0 6px 25px rgba(183, 148, 246, 0.6);
+}
+
+@keyframes popInBounce {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -255,20 +281,42 @@ footer {
 }
 
 .stat-card {
-    background: #fffacd;
+    background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
     color: #000;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    border: 3px solid #000;
+    border: 3px solid #9f7aea;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
+    animation: popInCard 0.6s ease-out backwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+.stat-card:nth-child(5) { animation-delay: 0.5s; }
+.stat-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes popInCard {
+    0% {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1) rotate(2deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
 }
 
 .stat-card:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-color: #ff1493;
+    box-shadow: 0 8px 20px rgba(159, 122, 234, 0.4);
+    border-color: #805ad5;
 }
 
 .stat-card.purple-border {
